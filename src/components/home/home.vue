@@ -58,7 +58,7 @@ export default {
   // 在页面还没有加载之前,先检查是否有token.没有就跳转到login页面
   // beforeCreate() {
   //   // 获取token ------*****要在login中设置token*****
-  //   const token = localStorage.getItem('token');
+  //   const token = sessionStorage.getItem('token');
   //   if (!token) {
   //     // 没有token ->登录去
   //     this.$router.push({ name: 'login' });
@@ -69,7 +69,8 @@ export default {
   },
   methods: {
     logOut() {
-      localStorage.clear();
+      
+      sessionStorage.clear();
       this.$message.success("退出成功");
       this.$router.push({ name: "login" });
     },

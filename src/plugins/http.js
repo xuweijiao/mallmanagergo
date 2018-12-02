@@ -12,7 +12,7 @@ MyHttpServer.install = (Vue) => {
     // 如果请求不是login设置token
     // 如果我们设置了baseUrl,url会自动截取我们请求的标识
     if (config.url !=='login') {
-       const token = localStorage.getItem("token");
+       const token = sessionStorage.getItem("token");
        config.headers["Authorization"] = token;
     }
     return config;

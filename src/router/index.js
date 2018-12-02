@@ -57,7 +57,7 @@ router.beforeEach((to, from, next) => {
     next()
   } else {
     // 如果要去的不是登录,判断token
-    const token = localStorage.getItem('token')
+    const token = sessionStorage.getItem('token')
     if (!token) {
       // 如果没有token,转到登录
       Message.warning('请先登录')

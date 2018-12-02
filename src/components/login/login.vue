@@ -36,7 +36,7 @@ export default {
 
       if (status === 200) {
         // 登录成功,保存token
-         localStorage.setItem('token',data.token)
+         sessionStorage.setItem('token',data.token)
         this.$message.success(msg);
         this.$router.push({
           name: "home"
